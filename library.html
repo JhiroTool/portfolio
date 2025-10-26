@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhiro | Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header" data-animate>
+    <div class="brand">
+      <span class="brand-mark">JH</span>
+      <div class="brand-copy">
+        <span class="brand-title">Jhiro</span>
+        <span class="brand-sub">Library</span>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="primaryNav">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#stack">Stack</a>
+      <a href="index.html#journey">Journey</a>
+      <a href="index.html#focus">Capabilities</a>
+      <a href="index.html#spotlight">Highlights</a>
+      <a href="index.html#pulse">Pulse</a>
+      <a href="index.html#contact">Connect</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="icon sun">☀️</span>
+      <span class="icon moon">🌙</span>
+    </button>
+  </header>
+  <main>
+    <section class="hero library-hero" data-animate>
+      <div class="hero-copy">
+        <span class="eyebrow">Resource vault</span>
+        <h1>Everything fueling our collaboration.</h1>
+        <p>An evolving library of docs, prompts, inspirations, and reference builds lifted from open communities and our own experiments.</p>
+        <div class="hero-actions">
+          <a class="action primary" href="index.html#spotlight">Back to highlights</a>
+          <a class="action ghost" href="#collections">Scroll to collections</a>
+        </div>
+      </div>
+      <div class="hero-visual" data-animate>
+        <div class="hero-photo">
+          <img src="assets/images/coding.jpg" alt="Code library">
+        </div>
+        <div class="hero-badges">
+          <div class="badge">Curated references</div>
+          <div class="badge">AI workflows</div>
+          <div class="badge">Reusable prompts</div>
+        </div>
+      </div>
+    </section>
+    <section id="collections" class="section" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Collections</span>
+        <h2>Curated drops inspired by the Frankenstein portfolio.</h2>
+        <p>Mix and match modules, components, and learning loops to launch future projects faster.</p>
+      </div>
+      <div class="card-grid library-grid" id="libraryGrid"></div>
+    </section>
+    <section class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Playlists</span>
+        <h2>Workflow recipes and binge-worthy threads.</h2>
+        <p>Each playlist bundles links, tools, and prompts we reach for when tackling a specific challenge.</p>
+      </div>
+      <div class="playlist-grid" id="playlistGrid"></div>
+    </section>
+    <section class="section" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Downloads</span>
+        <h2>Academic snapshots and documentation packs.</h2>
+        <p>Grab the files that teammates and recruiters usually ask for—transcripts, coursework heatmaps, and leadership summaries.</p>
+      </div>
+      <div class="download-grid" id="downloadGrid"></div>
+    </section>
+    <section class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Workshop kits</span>
+        <h2>Resources that power community sessions.</h2>
+        <p>Toolkits and templates lifted from STEM bootcamps, mentorship pods, and Computer Society programs.</p>
+      </div>
+      <div class="workshop-grid" id="workshopGrid"></div>
+    </section>
+  </main>
+  <footer class="site-footer" data-animate>
+    <div class="footer-brand">
+      <span class="brand-mark">JH</span>
+      <div>
+        <p>Library curated with Cascade AI to keep knowledge flows transparent.</p>
+        <p class="footnote">Updated October 26, 2025</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html">Main portfolio</a>
+      <a href="#collections">Collections</a>
+    </div>
+  </footer>
+  <script src="assets/js/library.js"></script>
+</body>
+</html>

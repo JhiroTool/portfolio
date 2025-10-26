@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhiro | Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header" data-animate>
+    <div class="brand">
+      <span class="brand-mark">
+        <img src="assets/images/jhiro.jpg" alt="Portrait of Jhiro" />
+      </span>
+      <div class="brand-copy">
+        <span class="brand-title">Jhiro</span>
+        <span class="brand-sub">Interactive Portfolio</span>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="primaryNav">
+      <a href="#hero">Home</a>
+      <a href="#stack">Stack</a>
+      <a href="#journey">Journey</a>
+      <a href="#focus">Capabilities</a>
+      <a href="#spotlight">Highlights</a>
+      <a href="library.html">Library</a>
+      <a href="#pulse">Pulse</a>
+      <a href="#contact">Connect</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="icon sun">☀️</span>
+      <span class="icon moon">🌙</span>
+    </button>
+  </header>
+  <main>
+    <section id="hero" class="hero" data-animate>
+      <div class="hero-splash" aria-hidden="true"></div>
+      <div class="hero-particles" aria-hidden="true">
+        <span class="particle comet" data-speed="18"></span>
+        <span class="particle comet" data-speed="22"></span>
+        <span class="particle ember" data-speed="26"></span>
+        <span class="particle ember" data-speed="20"></span>
+        <span class="particle spark" data-speed="24"></span>
+        <span class="particle spark" data-speed="28"></span>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">AI-assisted creation</span>
+        <h1>Designing my story in collaboration.</h1>
+        <p>Partnering human craft with AI precision to deliver resilient products—from campus innovations to community rebuilds. Proudly based in National University Lipa’s Computer Science program.</p>
+        <div class="hero-actions">
+          <a class="action primary" href="#journey">Explore the journey</a>
+          <a class="action ghost" href="#spotlight">View the highlights</a>
+          <a class="action ghost" href="library.html">Browse the library</a>
+          <a class="action outline" href="#contact">Work together</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card" data-animate>
+            <span class="stat-value" data-count="12">0</span>
+            <span class="stat-label">Projects delivered</span>
+          </div>
+          <div class="stat-card" data-animate>
+            <span class="stat-value" data-count="3">0</span>
+            <span class="stat-label">Years in code</span>
+          </div>
+          <div class="stat-card" data-animate>
+            <span class="stat-value" data-count="6">0</span>
+            <span class="stat-label">Team initiatives led</span>
+          </div>
+        </div>
+        <div class="hero-highlights" data-animate>
+          <div class="hero-highlight">
+            <span class="highlight-kicker">Academic focus</span>
+            <p>B.S. Computer Science · Dean’s List (GPA 3.8) · NU Lipa Innovation Lab fellow.</p>
+          </div>
+          <div class="hero-highlight">
+            <span class="highlight-kicker">Leadership</span>
+            <p>Collaboration coach focused on thoughtful documentation, async coordination, and peer mentorship systems.</p>
+          </div>
+          <div class="hero-highlight">
+            <span class="highlight-kicker">Credentials</span>
+            <p>IC3 Digital Literacy certified · Internship-ready 2025 · Portfolio projects with measurable ROI.</p>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-note">
+            <span class="pulse-indicator" aria-hidden="true"></span>
+            <p>Internship-ready for 2025 — actively iterating on the interactive library and live pulse feed.</p>
+          </div>
+          <div class="hero-meta-links">
+            <a href="mailto:hello@jhiro.dev">Email</a>
+            <span>•</span>
+            <a href="https://github.com/JhiroTool" target="_blank" rel="noreferrer">GitHub</a>
+            <span>•</span>
+            <a href="#journey">Timeline</a>
+            <span>•</span>
+            <a href="assets/docs/Jhiro_Ramir_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          </div>
+        </div>
+        <div class="hero-cta" data-animate>
+          <div class="hero-cta-copy">
+            <span class="cta-kicker">Summer 2025 placements</span>
+            <h2>Looking for a product-minded front-end + AI intern?</h2>
+            <p>I bring three years of hands-on builds, leadership in NU Lipa’s Computer Society, and automation habits that keep teams shipping.</p>
+          </div>
+          <div class="hero-cta-actions">
+            <a class="action outline" href="mailto:hello@jhiro.dev?subject=Internship%20opportunity">Schedule a chat</a>
+            <a class="action ghost" href="#experience">View experience summary</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" data-animate>
+        <div class="hero-photo">
+          <img src="assets/images/jhiro.jpg" alt="Portrait of Jhiro">
+        </div>
+        <div class="hero-badges">
+          <div class="badge">Realtime updates</div>
+          <div class="badge">AI pair programming</div>
+          <div class="badge">Future ready</div>
+        </div>
+        <div class="hero-arc" aria-hidden="true">
+          <span class="arc orbit"></span>
+          <span class="arc glimmer"></span>
+          <span class="arc glyph">✦</span>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Internship readiness</span>
+        <h2>Experience that translates to impact from day one.</h2>
+        <p>From campus product launches to community rebuilds, I’ve owned shipping, documentation, and cross-team communication.</p>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card">
+          <h3>Product & front-end</h3>
+          <ul>
+            <li>Delivered 12 production-ready builds including a resort management platform and quiz app.</li>
+            <li>Comfortable in React, Next.js, Tailwind, and design systems with accessibility baked in.</li>
+            <li>Partnered with stakeholders to translate ideas into scoped milestones and documentation.</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <h3>AI & automation</h3>
+          <ul>
+            <li>Ship LangChain-based flows for content QA, changelog posts, and prompt notebooks.</li>
+            <li>Familiar with GitHub Actions and CLI tooling to keep releases consistent.</li>
+            <li>Maintain reusable prompt libraries and scripts referenced in the portfolio library.</li>
+          </ul>
+        </article>
+        <article class="experience-card">
+          <h3>Leadership & ops</h3>
+          <ul>
+            <li>Vice President, NU Lipa Computer Society; led hackathons, mentorship pods, and retros.</li>
+            <li>Coordinated six large events with volunteer squads and industry mentors.</li>
+            <li>Documented processes to onboard new members faster and keep momentum post-event.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="stack" class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Tech arsenal</span>
+        <h2>The tools we reach for most.</h2>
+        <p>A curated toolkit inspired by the Frankenstein portfolio approach—mixing frameworks, data stacks, and creative engines that keep builds shipping.</p>
+      </div>
+      <div class="stack-grid" id="stackGrid"></div>
+    </section>
+    <section id="journey" class="section" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Journey so far</span>
+        <h2>Milestones tracked with Cascade.</h2>
+        <p>Every collaboration is logged so we can review decisions, celebrate wins, and plan smarter iterations.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-list" id="timelineList"></div>
+        <div class="timeline-detail">
+          <h3 id="detailTitle">Interactive portfolio build</h3>
+          <p id="detailSummary"></p>
+          <ul id="detailActions"></ul>
+        </div>
+      </div>
+    </section>
+    <section id="focus" class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Capabilities</span>
+        <h2>The toolbox that powers our builds.</h2>
+        <p>Combining hands-on experience with AI-driven workflows ensures rapid iteration without sacrificing craft.</p>
+      </div>
+      <div class="pill-grid">
+        <button class="pill" data-topic="web">Web Experience</button>
+        <button class="pill" data-topic="data">Data Storytelling</button>
+        <button class="pill" data-topic="automation">Automation</button>
+        <button class="pill" data-topic="games">Game Design</button>
+        <button class="pill" data-topic="learning">Continuous Learning</button>
+        <button class="pill" data-topic="community">Community Impact</button>
+      </div>
+      <div class="topic-panels" id="topicPanels"></div>
+    </section>
+    <section id="spotlight" class="section" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Highlights</span>
+        <h2>Live modules evolving with every session.</h2>
+        <div class="filters" id="projectFilters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="automation">Automation</button>
+          <button class="filter" data-filter="growth">Growth</button>
+        </div>
+      </div>
+      <div class="card-grid" id="projectGrid"></div>
+    </section>
+    <section id="pulse" class="section" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Activity pulse</span>
+        <h2>Snapshots of progress in motion.</h2>
+        <p>Borrowing the momentum of open-source journeys, this feed surfaces live experiments, inspirations, and checkpoints across our collaboration.</p>
+      </div>
+      <div class="pulse-feed" id="pulseFeed"></div>
+    </section>
+    <section id="contact" class="section alt" data-animate>
+      <div class="section-heading">
+        <span class="eyebrow">Connect</span>
+        <h2>Let us build the next chapter.</h2>
+        <p>Interested in collaborating or curious about how the AI-powered workflow can accelerate your ideas? Drop a line.</p>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell me about the project"></textarea>
+        </div>
+        <button type="submit" class="action primary">Send message</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer" data-animate>
+    <div class="footer-layout">
+      <div class="footer-brand">
+        <span class="brand-mark">
+          <img src="assets/images/jhiro.jpg" alt="Portrait of Jhiro" />
+        </span>
+        <div>
+          <p class="footer-name">Jhiro Ramir · Front-end & AI Apprentice</p>
+          <p class="footnote">Open to Summer 2025 internships · Based in Lipa City</p>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Let’s collaborate</h4>
+          <p>Share internship briefs or product challenges—expect a thoughtful reply within 24 hours.</p>
+          <a class="footer-cta" href="mailto:hello@jhiro.dev?subject=Internship%20opportunity">Email me</a>
+        </div>
+        <div class="footer-column">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#experience">Experience summary</a></li>
+            <li><a href="assets/docs/Jhiro_Ramir_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a></li>
+            <li><a href="#spotlight">Project highlights</a></li>
+            <li><a href="library.html">Resource library</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@jhiro.dev">hello@jhiro.dev</a></li>
+            <li><a href="https://github.com/JhiroTool" target="_blank" rel="noreferrer">GitHub.com/JhiroTool</a></li>
+            <li><a href="#journey">View journey log</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Jhiro Ramir. Built with Cascade AI · Last updated October 26, 2025.</span>
+    </div>
+  </footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -10,33 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header" data-animate>
-    <div class="brand">
-      <span class="brand-mark">JH</span>
-      <div class="brand-copy">
-        <span class="brand-title">Jhiro</span>
-        <span class="brand-sub">Library</span>
-      </div>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="site-nav" id="primaryNav">
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#stack">Stack</a>
-      <a href="index.html#journey">Journey</a>
-      <a href="index.html#focus">Capabilities</a>
-      <a href="index.html#spotlight">Highlights</a>
-      <a href="index.html#pulse">Pulse</a>
-      <a href="index.html#contact">Connect</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="icon sun">☀️</span>
-      <span class="icon moon">🌙</span>
-    </button>
-  </header>
+  <div data-include="includes/header-library.html"></div>
   <main>
     <section class="hero library-hero" data-animate>
       <div class="hero-copy">
@@ -92,20 +66,8 @@
       <div class="workshop-grid" id="workshopGrid"></div>
     </section>
   </main>
-  <footer class="site-footer" data-animate>
-    <div class="footer-brand">
-      <span class="brand-mark">JH</span>
-      <div>
-        <p>Library curated with Cascade AI to keep knowledge flows transparent.</p>
-        <p class="footnote">Updated October 26, 2025</p>
-      </div>
-    </div>
-    <div class="footer-links">
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html">Main portfolio</a>
-      <a href="#collections">Collections</a>
-    </div>
-  </footer>
+  <div data-include="includes/footer-library.html"></div>
+  <script src="assets/js/includes.js"></script>
   <script src="assets/js/library.js"></script>
 </body>
 </html>

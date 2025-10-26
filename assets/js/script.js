@@ -1,24 +1,46 @@
+const INCLUDE_EVENT = 'includes:loaded';
 const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const storedTheme = localStorage.getItem('theme');
-const root = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
-const navToggle = document.getElementById('navToggle');
-const nav = document.getElementById('primaryNav');
-const animatedElements = document.querySelectorAll('[data-animate]');
-const statValues = document.querySelectorAll('.stat-value');
-const timelineList = document.getElementById('timelineList');
-const timelineDetail = document.getElementById('timelineDetail');
-const detailTitle = document.getElementById('detailTitle');
-const detailSummary = document.getElementById('detailSummary');
-const detailActions = document.getElementById('detailActions');
-const pills = document.querySelectorAll('.pill');
-const topicPanels = document.getElementById('topicPanels');
-const projectFilters = document.getElementById('projectFilters');
-const projectGrid = document.getElementById('projectGrid');
-const stackGrid = document.getElementById('stackGrid');
-const pulseFeed = document.getElementById('pulseFeed');
-const heroTypewriter = document.getElementById('typewriter');
-const contactForm = document.querySelector('.contact-form');
+
+let root;
+let themeToggle;
+let navToggle;
+let nav;
+let animatedElements;
+let statValues;
+let timelineList;
+let detailTitle;
+let detailSummary;
+let detailActions;
+let pills;
+let topicPanels;
+let projectFilters;
+let projectGrid;
+let stackGrid;
+let pulseFeed;
+let heroTypewriter;
+let contactForm;
+
+const mapDom = () => {
+  root = document.documentElement;
+  themeToggle = document.getElementById('themeToggle');
+  navToggle = document.getElementById('navToggle');
+  nav = document.getElementById('primaryNav');
+  animatedElements = document.querySelectorAll('[data-animate]');
+  statValues = document.querySelectorAll('.stat-value');
+  timelineList = document.getElementById('timelineList');
+  detailTitle = document.getElementById('detailTitle');
+  detailSummary = document.getElementById('detailSummary');
+  detailActions = document.getElementById('detailActions');
+  pills = document.querySelectorAll('.pill');
+  topicPanels = document.getElementById('topicPanels');
+  projectFilters = document.getElementById('projectFilters');
+  projectGrid = document.getElementById('projectGrid');
+  stackGrid = document.getElementById('stackGrid');
+  pulseFeed = document.getElementById('pulseFeed');
+  heroTypewriter = document.getElementById('typewriter');
+  contactForm = document.querySelector('.contact-form');
+};
 
 const setTheme = theme => {
   root.setAttribute('data-theme', theme);
@@ -62,6 +84,7 @@ const renderPulse = () => {
 };
 
 const initTheme = () => {
+  if (!root) return;
   if (storedTheme) {
     setTheme(storedTheme);
     return;
@@ -246,6 +269,7 @@ const projectData = [
 ];
 
 const renderTimeline = () => {
+  if (!timelineList) return;
   timelineList.innerHTML = '';
   timelineData.forEach((item, index) => {
     const element = document.createElement('button');
@@ -274,6 +298,7 @@ const selectTimeline = id => {
 };
 
 const renderTopics = () => {
+  if (!topicPanels || !pills.length) return;
   topicPanels.innerHTML = '';
   pills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -294,6 +319,7 @@ const renderTopics = () => {
 };
 
 const renderProjects = filter => {
+  if (!projectGrid) return;
   const current = filter && filter !== 'all' ? projectData.filter(project => project.category === filter) : projectData;
   projectGrid.innerHTML = '';
   current.forEach(project => {
@@ -324,6 +350,7 @@ const renderProjects = filter => {
 };
 
 const initProjectFilters = () => {
+  if (!projectFilters) return;
   projectFilters.querySelectorAll('.filter').forEach(button => {
     button.addEventListener('click', () => {
       projectFilters.querySelectorAll('.filter').forEach(item => item.classList.toggle('active', item === button));
@@ -334,6 +361,7 @@ const initProjectFilters = () => {
 };
 
 const animateStats = entries => {
+  if (!statValues || !statValues.length) return;
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     statValues.forEach(node => {
@@ -361,6 +389,7 @@ const revealOnScroll = entries => {
 };
 
 const initObservers = () => {
+  if (!animatedElements || !animatedElements.length) return;
   const revealObserver = new IntersectionObserver(revealOnScroll, { threshold: 0.2 });
   animatedElements.forEach(element => revealObserver.observe(element));
   const statObserver = new IntersectionObserver(animateStats, { threshold: 0.6 });
@@ -369,12 +398,14 @@ const initObservers = () => {
 };
 
 const handleNavToggle = () => {
+  if (!navToggle || !nav) return;
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', (!expanded).toString());
   nav.classList.toggle('open', !expanded);
 };
 
 const initNavigation = () => {
+  if (!navToggle || !nav) return;
   navToggle.addEventListener('click', handleNavToggle);
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
@@ -385,6 +416,7 @@ const initNavigation = () => {
 };
 
 const initThemeToggle = () => {
+  if (!themeToggle) return;
   themeToggle.addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') === 'dark';
     setTheme(isDark ? 'light' : 'dark');
@@ -407,14 +439,23 @@ const initContactForm = () => {
   });
 };
 
-initTheme();
-renderTimeline();
-renderTopics();
-initProjectFilters();
-renderStack();
-renderPulse();
-initObservers();
-initNavigation();
-initThemeToggle();
-initContactForm();
-tickTypewriter();
+const boot = () => {
+  mapDom();
+  initTheme();
+  renderTimeline();
+  renderTopics();
+  initProjectFilters();
+  renderStack();
+  renderPulse();
+  initObservers();
+  initNavigation();
+  initThemeToggle();
+  initContactForm();
+  tickTypewriter();
+};
+
+if (window.__includesLoaded) {
+  boot();
+} else {
+  document.addEventListener(INCLUDE_EVENT, boot, { once: true });
+}

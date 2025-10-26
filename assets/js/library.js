@@ -1,14 +1,28 @@
+const INCLUDE_EVENT = 'includes:loaded';
 const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const storedTheme = localStorage.getItem('theme');
-const root = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
-const navToggle = document.getElementById('navToggle');
-const nav = document.getElementById('primaryNav');
-const animatedElements = document.querySelectorAll('[data-animate]');
-const libraryGrid = document.getElementById('libraryGrid');
-const playlistGrid = document.getElementById('playlistGrid');
-const downloadGrid = document.getElementById('downloadGrid');
-const workshopGrid = document.getElementById('workshopGrid');
+
+let root;
+let themeToggle;
+let navToggle;
+let nav;
+let animatedElements;
+let libraryGrid;
+let playlistGrid;
+let downloadGrid;
+let workshopGrid;
+
+const mapDom = () => {
+  root = document.documentElement;
+  themeToggle = document.getElementById('themeToggle');
+  navToggle = document.getElementById('navToggle');
+  nav = document.getElementById('primaryNav');
+  animatedElements = document.querySelectorAll('[data-animate]');
+  libraryGrid = document.getElementById('libraryGrid');
+  playlistGrid = document.getElementById('playlistGrid');
+  downloadGrid = document.getElementById('downloadGrid');
+  workshopGrid = document.getElementById('workshopGrid');
+};
 
 const setTheme = theme => {
   root.setAttribute('data-theme', theme);
@@ -16,6 +30,7 @@ const setTheme = theme => {
 };
 
 const initTheme = () => {
+  if (!root) return;
   if (storedTheme) {
     setTheme(storedTheme);
     return;
@@ -215,11 +230,13 @@ const revealOnScroll = entries => {
 };
 
 const initObservers = () => {
+  if (!animatedElements || !animatedElements.length) return;
   const revealObserver = new IntersectionObserver(revealOnScroll, { threshold: 0.2 });
   animatedElements.forEach(element => revealObserver.observe(element));
 };
 
 const handleNavToggle = () => {
+  if (!navToggle || !nav) return;
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', (!expanded).toString());
   nav.classList.toggle('open', !expanded);
@@ -244,11 +261,20 @@ const initThemeToggle = () => {
   });
 };
 
-initTheme();
-renderLibrary();
-renderPlaylists();
-renderDownloads();
-renderWorkshops();
-initObservers();
-initNavigation();
-initThemeToggle();
+const boot = () => {
+  mapDom();
+  initTheme();
+  renderLibrary();
+  renderPlaylists();
+  renderDownloads();
+  renderWorkshops();
+  initObservers();
+  initNavigation();
+  initThemeToggle();
+};
+
+if (window.__includesLoaded) {
+  boot();
+} else {
+  document.addEventListener(INCLUDE_EVENT, boot, { once: true });
+}

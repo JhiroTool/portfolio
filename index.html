@@ -10,36 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header" data-animate>
-    <div class="brand">
-      <span class="brand-mark">
-        <img src="assets/images/jhiro.jpg" alt="Portrait of Jhiro" />
-      </span>
-      <div class="brand-copy">
-        <span class="brand-title">Jhiro</span>
-        <span class="brand-sub">Interactive Portfolio</span>
-      </div>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="site-nav" id="primaryNav">
-      <a href="#hero">Home</a>
-      <a href="#stack">Stack</a>
-      <a href="#journey">Journey</a>
-      <a href="#focus">Capabilities</a>
-      <a href="#spotlight">Highlights</a>
-      <a href="library.html">Library</a>
-      <a href="#pulse">Pulse</a>
-      <a href="#contact">Connect</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <span class="icon sun">☀️</span>
-      <span class="icon moon">🌙</span>
-    </button>
-  </header>
+  <div data-include="includes/header-main.html"></div>
   <main>
     <section id="hero" class="hero" data-animate>
       <div class="hero-splash" aria-hidden="true"></div>
@@ -248,46 +219,8 @@
       </form>
     </section>
   </main>
-  <footer class="site-footer" data-animate>
-    <div class="footer-layout">
-      <div class="footer-brand">
-        <span class="brand-mark">
-          <img src="assets/images/jhiro.jpg" alt="Portrait of Jhiro" />
-        </span>
-        <div>
-          <p class="footer-name">Jhiro Ramir · Front-end & AI Apprentice</p>
-          <p class="footnote">Open to Summer 2025 internships · Based in Lipa City</p>
-        </div>
-      </div>
-      <div class="footer-columns">
-        <div class="footer-column">
-          <h4>Let’s collaborate</h4>
-          <p>Share internship briefs or product challenges—expect a thoughtful reply within 24 hours.</p>
-          <a class="footer-cta" href="mailto:hello@jhiro.dev?subject=Internship%20opportunity">Email me</a>
-        </div>
-        <div class="footer-column">
-          <h4>Quick links</h4>
-          <ul>
-            <li><a href="#experience">Experience summary</a></li>
-            <li><a href="assets/docs/Jhiro_Ramir_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a></li>
-            <li><a href="#spotlight">Project highlights</a></li>
-            <li><a href="library.html">Resource library</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="mailto:hello@jhiro.dev">hello@jhiro.dev</a></li>
-            <li><a href="https://github.com/JhiroTool" target="_blank" rel="noreferrer">GitHub.com/JhiroTool</a></li>
-            <li><a href="#journey">View journey log</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Jhiro Ramir. Built with Cascade AI · Last updated October 26, 2025.</span>
-    </div>
-  </footer>
+  <div data-include="includes/footer.html"></div>
+  <script src="assets/js/includes.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -96,10 +96,10 @@ const timelineData = [
   {
     id: 'install',
     date: 'Oct 26, 2025 · 07:55',
-    title: 'Installed Cascade AI assistant',
-    summary: 'Connected the AI pair programmer and aligned on goals for building a living portfolio that tracks progress in real time.',
+    title: 'Launched the Cascade build system',
+    summary: 'Outlined the solo build strategy for a living portfolio that tracks progress in real time.',
     actions: [
-      'Outlined objectives for an interactive, AI-assisted showcase',
+      'Outlined objectives for an interactive, craft-driven showcase',
       'Mapped first iteration scope around timeline, highlights, and live counters'
     ]
   },
@@ -147,7 +147,7 @@ const stackData = [
   },
   {
     icon: '🧠',
-    title: 'AI & automation',
+    title: 'Automation engineering',
     copy: 'LangChain workflows, prompt notebooks, and CI-ready scripts accelerate documentation and QA cycles.',
     tags: ['LangChain', 'Node CLI', 'OpenAI', 'GitHub Actions']
   },
@@ -225,7 +225,7 @@ const topicContent = {
   },
   automation: {
     title: 'Automation',
-    description: 'Leveraging AI-assisted workflows, scripting, and tooling to accelerate delivery while maintaining precision.'
+    description: 'Leveraging automation workflows, scripting, and tooling to accelerate delivery while maintaining precision.'
   },
   games: {
     title: 'Game Design',
